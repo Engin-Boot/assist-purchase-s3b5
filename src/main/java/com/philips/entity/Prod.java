@@ -38,6 +38,7 @@ public class Prod {
 	@Column( name="is_wireless" )	
 	private boolean isWireless ;
 	
+	public Prod() {}
 	public int getProdId() {
 		return prodId;
 	}

@@ -1,0 +1,70 @@
+<h2>Add product with its details</h2>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">ProductID</label>
+    <div class="col-sm-10">
+      <input type="text" required class="form-control" id="prodId" placeholder="ProductID" [(ngModel)]="prodId"> 
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="prodName" placeholder="Product Name" [(ngModel)]="prodName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Price</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="prodPrice" placeholder="Product Price" [(ngModel)]="prodPrice">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Product Manufactured Date</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="dateOfManufacture" placeholder="Product Manufacture Date" [(ngModel)]="dateOfManufacture">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">Product Features</div>
+    <div class="col-sm-10">
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="hasTouchscreen" [(ngModel)]="hasTouchscreen">
+        <label class="form-check-label" for="gridCheck1">Touchscreen</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="hasAlarm" [(ngModel)]="hasAlarm">
+        <label class="form-check-label" for="gridCheck1">hasAlarm</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isInteroperable" [(ngModel)]="isInteroperable">
+        <label class="form-check-label" for="gridCheck1">isInteroperable</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isWearable" [(ngModel)]="isWearable">
+        <label class="form-check-label" for="gridCheck1">isWearable</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="hasEmrConnectivity" [(ngModel)]="hasEmrConnectivity">
+        <label class="form-check-label" for="gridCheck1">hasEmrConnectivity</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isPortable" [(ngModel)]="isPortable">
+        <label class="form-check-label" for="gridCheck1">isPortable</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="isWireless" [(ngModel)]="isWireless">
+        <label class="form-check-label" for="gridCheck1">isWireless</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" (click)="addProduct()">Add</button>
+    </div>
+  </div>

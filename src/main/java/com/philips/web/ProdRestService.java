@@ -3,6 +3,7 @@ package com.philips.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +19,7 @@ import com.philips.entity.Prod;
 import com.philips.exceptions.ProdIdException;
 import com.philips.exceptions.ProdNotFoundException;
 
+@CrossOrigin
 @RestController
 public class ProdRestService {
 	
@@ -56,7 +58,7 @@ public class ProdRestService {
 	}
 
 	@DeleteMapping("/deleteproduct/{prodid}")
-	public String deleteProduct(@PathVariable("empid") int pid) throws ProdNotFoundException {
+	public String deleteProduct(@PathVariable("prodid") int pid) throws ProdNotFoundException {
 		Prod prodFromDb = dao.viewProduct(pid);
 		if(prodFromDb == null)
 			throw new ProdNotFoundException("Product Not found for the ID " + pid);
