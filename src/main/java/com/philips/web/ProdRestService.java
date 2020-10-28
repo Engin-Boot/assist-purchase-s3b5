@@ -18,7 +18,7 @@ import com.philips.dao.IProdDao;
 import com.philips.entity.Prod;
 import com.philips.exceptions.ProdIdException;
 import com.philips.exceptions.ProdNotFoundException;
-
+import com.philips.alert.*;
 @CrossOrigin
 @RestController
 public class ProdRestService {
@@ -39,7 +39,11 @@ public class ProdRestService {
 	public List<Prod> viewProduct(){
 		return dao.viewProduct();
 	}
-	
+	@PostMapping("/send")
+	public String send(@RequestBody String rq) {
+		alertMail.sendSimpleEmail(rq);
+		return "done";
+	}
 	@GetMapping("/viewbyid/{prodid}")
 	public Prod viewProduct(@PathVariable("prodid") int pid) throws ProdNotFoundException {
 		Prod prodFromDb = dao.viewProduct(pid) ;
@@ -47,7 +51,11 @@ public class ProdRestService {
 			throw new ProdNotFoundException("Product Not found for the ID " + pid);
 		return prodFromDb;
 	}
-	
+	@PostMapping("/viewproducts")
+	public List<Prod> viewProduct(@RequestBody Prod prod){
+		List<Prod> productsFromDb = dao.viewProductForSpecifications(prod);
+		return productsFromDb;
+	}
 	@PutMapping("/editproduct")
 	public String editProduct(@RequestBody Prod prod) throws ProdNotFoundException {
 		Prod empFromDb = dao.viewProduct(prod.getProdId());

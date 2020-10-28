@@ -9,13 +9,15 @@ import {ProductService} from './service/productServices';
 import { HttpClientModule } from '@angular/common/http';
 import { CostomerComponent } from './costomer/costomer.component';
 import { AdminComponent } from './admin/admin.component';
+import {ViewComponent} from './costomer/view/view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CostomerComponent,
-    AdminComponent
+    AdminComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

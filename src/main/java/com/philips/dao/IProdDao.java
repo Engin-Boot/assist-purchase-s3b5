@@ -11,5 +11,5 @@ public interface IProdDao {
 	public Prod viewProduct( int prodId ) ;
 	public boolean editProduct( Prod prod ) ;
 	public boolean removeProduct( Prod prod ) ;
-	
+	public List<Prod> viewProductForSpecifications(Prod p);
 }

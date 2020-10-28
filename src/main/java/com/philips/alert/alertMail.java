@@ -17,7 +17,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 public class alertMail implements CommandLineRunner {
 
 	@Autowired
-	private JavaMailSender javaMailSender ;
+	private static JavaMailSender javaMailSender ;
 	
 	
 	
@@ -32,14 +32,13 @@ public class alertMail implements CommandLineRunner {
 		
 	}
 	
-	void sendSimpleEmail() {
+	public static void sendSimpleEmail(String content) {
 
         SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo("kirankumarr.13.1998@gmail.com", "kiran.k.r@campusuvce.in");
+        msg.setTo("test@gmail.com", "test2@gmail.com");
 
-        msg.setSubject("Best Philips Products at low prices");
-        msg.setText("check out these new devices from philips - "
-        		+ "https://www.philips.co.in/healthcare/solutions/patient-monitoring/continuous-patient-monitoring-systems ");
+        msg.setSubject("Costomer requesting for human interface");
+        msg.setText(content);
 
         javaMailSender.send(msg);
 

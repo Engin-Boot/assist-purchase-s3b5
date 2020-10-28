@@ -11,18 +11,6 @@ export class ProductService{
     this.baseUrl=baseUrl;
   }
 
-  viewall(){
-    let observableStream=this.httpClient.get(`${this.baseUrl}/viewall`);
-    return observableStream;
-  }
-  addProduct(req){
-    let observableStream=this.httpClient.post(`${this.baseUrl}/addproduct`,req);
-    return observableStream;
-  }
-  view(req){
-    let observableStream=this.httpClient.post(`${this.baseUrl}/viewproducts`,req);
-    return observableStream;
-  }
   sendMail(req){
     let observableStream=this.httpClient.post(`${this.baseUrl}/send`,req);
     return observableStream;
